@@ -1,7 +1,7 @@
 class Node{
- private Interger data;
+ private Integer data;
  private Node next,prev;
- public Node(Node prev2, Interger number, Node next2){
+ public Node(Node prev2, Integer number, Node next2){
    prev = prev2;
    data = number;
    next = next2;
@@ -18,10 +18,10 @@ class Node{
  public void setPrev(Node other){
    prev = other;
  }
- public Interger getData(){
+ public Integer getData(){
    return data;
  }
- public Interger setData(Interger i){
+ public Integer setData(Integer i){
    data = i;
    return data;
  }
@@ -34,7 +34,7 @@ class MyLinkedList{
  private Node start,end;
  public MyLinkedList(){
    start = new Node(null, null, null);
-   end = new Node (null,null,null)
+   end = new Node (null,null,null);
  }
 
 
@@ -44,16 +44,18 @@ class MyLinkedList{
 
 
  public boolean add(int value){
-   if(size = 0){
+   if(size == 0){
      Node add = new Node(null,value,null);
      start.setNext(add);
      end.setPrev(add);
      size += 1;
     return true;
    }
-   else{
-   Node add = new Node(end.prev(), value, null);
-   end.setPrev(add)
+   if (size != 0){
+   Node pre = end.prev();
+   Node add = new Node(pre, value, null);
+   pre.setNext(add);
+   end.setPrev(add);
    size += 1;
    return true;
  }
@@ -61,18 +63,21 @@ class MyLinkedList{
  }
 
  public String toString(){
-   if (size = 0){
+   if (size == 0){
      return "[]";
    }
-   String ans = "["
+   String ans = "[";
+   System.out.println("\n");
    Node current = start.next();
-   while (current.getData() != null){
-   ans = ans + current.getData(); + ", "
+   while (current != null){
+     System.out.println(current);
+   ans = ans + current.getData() + ", ";
+   System.out.println(ans);
    current = current.next();
     }
-    ans = ans + "]"
+    ans = ans + "]";
     return ans;
  }
 
- 
+
 }
