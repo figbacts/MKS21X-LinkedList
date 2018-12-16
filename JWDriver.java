@@ -30,10 +30,15 @@ public class JWDriver {
 		System.out.println("Index of 6 (this should be -1): " + jeff.indexOf(6));
 
 		//Checking exceptions, remove comment to activate
-		/*jeff.set(100,11);
+try{
+    jeff.set(100,11);
 		jeff.remove(-1);
 		jeff.remove(55);
-		*/
+  }
+  catch(IndexOutOfBoundsException e ){
+    System.out.println(e);
+  }
+
 
 		System.out.println("nothing failed congrats");
     }

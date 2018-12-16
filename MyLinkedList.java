@@ -87,6 +87,9 @@ class MyLinkedList{
  }
 
  public Integer get(int index){
+   if (index < 0 || index > size()){
+     throw new IndexOutOfBoundsException("IndexOutOfBoundsException at get(index)");
+   }
    int counter = 0;
    Node current = start.next();
    while (counter != index){
@@ -98,6 +101,9 @@ class MyLinkedList{
 
 
  public Integer set(int index,Integer value){
+   if (index < 0 || index > size()){
+     throw new IndexOutOfBoundsException("IndexOutOfBoundsException at set(index,value)");
+   }
    int counter = 0;
    Node current = start.next();
    while (counter != index){
@@ -135,6 +141,9 @@ return -1;
 }
 
 public void add(int index,Integer value){
+  if (index < 0 || index > size()){
+    throw new IndexOutOfBoundsException("IndexOutOfBoundsException at add(index,value)");
+  }
   if (index == size){
     add(value);
   }
@@ -161,6 +170,9 @@ if (index != size && index != 0){
 }
 
 public Integer remove(int index){
+  if (index < 0 || index > size()){
+    throw new IndexOutOfBoundsException("IndexOutOfBoundsException at remove(index)");
+  }
   if (index + 1 == size){
     Integer ans = end.prev().getData();
     Node current = end.prev().prev();
@@ -207,5 +219,6 @@ public boolean remove(Integer value){
   remove(counter);
   return true;
 }
+
 
 }
