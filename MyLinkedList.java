@@ -103,7 +103,7 @@ class MyLinkedList{
 public boolean contains(Integer value){
   Node current = start.next();
   while (current != null){
-    if (current.getData() == value){
+    if (current.getData().equals(value)){
       return true;
     }
     current = current.next();
@@ -111,5 +111,18 @@ public boolean contains(Integer value){
   return false;
 }
 
+
+public int indexOf(Integer value){
+  int index = 0;
+  Node current = start.next();
+  while (current != null){
+    if (current.getData().equals(value)){
+      return index;
+    }
+    current = current.next();
+    index ++;
+  }
+return -1;
+}
 
 }

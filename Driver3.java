@@ -49,23 +49,28 @@ public class Driver3 {
         System.out.println("##############################");
         System.out.println("##Checking Containment Test:##");
         System.out.println("##############################");
-        System.out.println(list.contains(new Integer(999)));
+        System.out.println(list);
+        System.out.println(list.contains(new Integer(99)));
         System.out.println("This should print: false");
-
+        /*
         //Step Seven: Testing the Size Method
         System.out.println("##############");
         System.out.println("##Size Test:##");
         System.out.println("##############");
         System.out.println(list.size());
         System.out.println("This should print: 9");
-        /*
+
+        */
         //Step Eight: indexOf Method
+
         System.out.println("########################");
         System.out.println("##Index of Value Test:##");
         System.out.println("########################");
-        System.out.println(list.indexOf(0));
+        System.out.println(list);
+        System.out.println(list.indexOf(99));
         System.out.println("This should print: 0");
 
+        /*
         //Step Nine: Exception Testing
         System.out.println("######################");
         System.out.println("##Exception Testing:##");
