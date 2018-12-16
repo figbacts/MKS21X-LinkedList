@@ -125,4 +125,28 @@ public int indexOf(Integer value){
 return -1;
 }
 
+public void add(int index,Integer value){
+  if (index == size){
+    add(value);
+  }
+ if(index == 0){
+   Node next = start.next();
+   Node add = new Node (null, value, next);
+   next.setPrev(add);
+   start.setNext(add);
+ }
+if (index != size && index != 0){
+  int counter = 0;
+  Node current = start.next();
+  while (counter != index){
+    current = current.next();
+    counter ++;
+  }
+  Node last = current.prev();
+  Node add = new Node (last,value,current);
+  last.setNext(add);
+  current.setPrev(add);
+}
+}
+
 }
