@@ -100,6 +100,16 @@ class MyLinkedList{
    return counter;
  }
 
+public boolean contains(Integer value){
+  Node current = start.next();
+  while (current != null){
+    if (current.getData() == value){
+      return true;
+    }
+    current = current.next();
+  }
+  return false;
+}
 
 
 }

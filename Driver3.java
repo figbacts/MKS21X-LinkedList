@@ -44,7 +44,7 @@ public class Driver3 {
         list.remove(new Integer(9));
         System.out.println(list);
         System.out.println("This should print: \"[0, 1, 2, 3, 4, 5, 6, 7, 8]\"");
-
+        */
         //Step Six: Testing the Contains Method
         System.out.println("##############################");
         System.out.println("##Checking Containment Test:##");
@@ -58,7 +58,7 @@ public class Driver3 {
         System.out.println("##############");
         System.out.println(list.size());
         System.out.println("This should print: 9");
-
+        /*
         //Step Eight: indexOf Method
         System.out.println("########################");
         System.out.println("##Index of Value Test:##");
