@@ -149,4 +149,34 @@ if (index != size && index != 0){
 }
 }
 
+public Integer remove(int index){
+  if (index == size){
+    Integer ans = end.prev().getData();
+    Node current = end.prev().prev();
+    current.setNext(null);
+    end.setPrev(current);
+    return ans;
+  }
+  if (index == 0){
+    Integer ans = start.next().getData();
+    Node current = start.next().next();
+    current.setPrev(null);
+    start.setNext(current);
+    return ans;
+  }
+    int counter = 0;
+    Node current = start.next();
+    while (counter != index){
+      current = current.next();
+      counter ++;
+    }
+  Integer ans = current.getData();
+  Node last = current.prev();
+  Node forward = current.next();
+  last.setNext(forward);
+  forward.setPrev(last);
+  return ans;
+}
+
+
 }
