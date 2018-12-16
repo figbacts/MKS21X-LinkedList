@@ -21,7 +21,6 @@ public class Driver3 {
         }
         System.out.println(list);
         System.out.println("This should print: \"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\"");
-
         //Step Three: Adding a value to the middle
         System.out.println("#####################################");
         System.out.println("##Adding Values in the Middle Test:##");
@@ -29,6 +28,7 @@ public class Driver3 {
         // list.add(5, 999);
         System.out.println(list);
         System.out.println("This should print: \"[0, 1, 2, 3, 4, 999, 5, 6, 7, 8, 9]\"");
+        System.out.println(list.get(5));
          /*
         //Step Four: Removing a value from the list by index
         System.out.println("##########################");

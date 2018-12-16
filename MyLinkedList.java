@@ -70,13 +70,21 @@ class MyLinkedList{
    System.out.println("\n");
    Node current = start.next();
    while (current != null){
-     System.out.println(current);
    ans = ans + current.getData() + ", ";
-   System.out.println(ans);
    current = current.next();
     }
     ans = ans + "]";
     return ans;
+ }
+
+ public Integer get(int index){
+   int counter = 0;
+   Node current = start.next();
+   while (counter != index){
+     current = current.next();
+     counter ++;
+   }
+   return current.getData();
  }
 
 
