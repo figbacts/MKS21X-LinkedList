@@ -36,6 +36,15 @@ class MyLinkedList{
    start = new Node(null, null, null);
    end = new Node (null,null,null);
  }
+ public MyLinkedList(int ary[]){
+    start = new Node(null, null,null);
+    end = new Node (null,null,null);
+    for (int i = 0; i < ary.length; i ++){
+      add(ary[i]);
+    }
+
+   }
+
 
 
  public int size(){
@@ -69,11 +78,11 @@ class MyLinkedList{
    String ans = "[";
    System.out.println("\n");
    Node current = start.next();
-   while (current != null){
+   while (current.next() != null){
    ans = ans + current.getData() + ", ";
    current = current.next();
     }
-    ans = ans + "]";
+    ans = ans + current.getData()+ "]";
     return ans;
  }
 
@@ -134,6 +143,7 @@ public void add(int index,Integer value){
    Node add = new Node (null, value, next);
    next.setPrev(add);
    start.setNext(add);
+   size += 1;
  }
 if (index != size && index != 0){
   int counter = 0;
@@ -146,15 +156,17 @@ if (index != size && index != 0){
   Node add = new Node (last,value,current);
   last.setNext(add);
   current.setPrev(add);
+  size += 1;
 }
 }
 
 public Integer remove(int index){
-  if (index == size){
+  if (index + 1 == size){
     Integer ans = end.prev().getData();
     Node current = end.prev().prev();
     current.setNext(null);
     end.setPrev(current);
+    size -= 1;
     return ans;
   }
   if (index == 0){
@@ -162,6 +174,7 @@ public Integer remove(int index){
     Node current = start.next().next();
     current.setPrev(null);
     start.setNext(current);
+    size -= 1;
     return ans;
   }
     int counter = 0;
@@ -175,8 +188,24 @@ public Integer remove(int index){
   Node forward = current.next();
   last.setNext(forward);
   forward.setPrev(last);
+  size -= 1;
   return ans;
 }
 
+public boolean remove(Integer value){
+  if (!(contains(value))){
+    return false;
+  }
+  int counter = 0;
+  Node current = start.next();
+  while (!(current.getData().equals(value))){
+    current = current.next();
+    counter ++;
+  }
+  System.out.println(counter);
+  System.out.println(size);
+  remove(counter);
+  return true;
+}
 
 }
