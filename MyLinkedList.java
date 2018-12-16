@@ -88,4 +88,18 @@ class MyLinkedList{
  }
 
 
+ public Integer set(int index,Integer value){
+   int counter = 0;
+   Node current = start.next();
+   while (counter != index){
+     current = current.next();
+     counter ++;
+   }
+   counter = current.getData();
+   current.setData(value);
+   return counter;
+ }
+
+
+
 }
