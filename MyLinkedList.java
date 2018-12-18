@@ -76,7 +76,6 @@ class MyLinkedList{
      return "[]";
    }
    String ans = "[";
-   System.out.println("\n");
    Node current = start.next();
    while (current.next() != null){
    ans = ans + current.getData() + ", ";
